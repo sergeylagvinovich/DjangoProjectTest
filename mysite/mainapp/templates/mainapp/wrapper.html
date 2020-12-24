@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width", initial-scale=1.0>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+    <title>Заголовок страницы</title>
+    {% load static %}
+  </head>
+  <body>
+    <div class="jumbotron">
+      <div class="container">
+        <h1>{% include "mainapp/includes/some_html.html" %}</h1>
+        <p>
+          {% block content %}
+          {% endblock %}
+        </p>
+        <p>
+          <a href="/" class="btn btn-success btn-lg">Главная страница</a>
+          <a href="/news" class="btn btn-primary btn-lg">Новости &raquo;</a>
+          <a href="/contact" class="btn btn-info btn-lg">Контакты</a>
+        </p>
+      </div>
+    </div>
+    <div class="container">
+      <img src="{% static 'mainapp/images/p1.jpg' %}" class="img-thumbnail">
+      <hr>
+      &copy; Все права защищены 2020
+    </div>
+  </body>
+</html>
